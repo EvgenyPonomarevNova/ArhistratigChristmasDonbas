@@ -25,6 +25,42 @@
                 <div class="header__logo">
                     <img src="./img/arhistratig_logo_black 1.svg" alt="logo" />
                 </div>
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <!-- Mobile Menu Modal -->
+                <div class="mobile-menu-modal" id="mobileMenuModal">
+                    <div class="mobile-menu-header">
+                        <div class="header__logo">
+                            <img src="./img/arhistratig_logo_black 1.svg" alt="logo" />
+                        </div>
+                        <button class="mobile-menu-close" id="mobileMenuClose">&times;</button>
+                    </div>
+                    <nav class="mobile-menu-nav">
+                        <ul class="mobile-menu-list">
+                            <li class="mobile-menu-item">
+                                <a href="#children" class="mobile-menu-link">Дети</a>
+                            </li>
+                            <li class="mobile-menu-item">
+                                <a href="#about-fund" class="mobile-menu-link">О фонде</a>
+                            </li>
+                            <li class="mobile-menu-item">
+                                <a href="#how-it-works" class="mobile-menu-link">Как это работает</a>
+                            </li>
+                            <li class="mobile-menu-item">
+                                <a href="#faq" class="mobile-menu-link">FAQ</a>
+                            </li>
+                            <li class="mobile-menu-item">
+                                <a href="#contacts" class="mobile-menu-link">Контакты</a>
+                            </li>
+                        </ul>
+                        <button class="mobile-menu-btn-donate">Пожертвовать</button>
+                    </nav>
+                </div>
                 <ul class="header__menu-list">
                     <li class="header__menu-item">
                         <a href="#" class="header__menu-link">Дети</a>
@@ -735,6 +771,63 @@
                 </div>
     </div>
 
+    <!-- Mobile Menu Button -->
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- Mobile Menu Modal -->
+    <div class="mobile-menu-modal" id="mobileMenuModal">
+        <div class="mobile-menu-header">
+            <div class="header__logo">
+                <img src="./img/arhistratig_logo_black 1.svg" alt="logo" />
+            </div>
+            <button class="mobile-menu-close" id="mobileMenuClose">&times;</button>
+        </div>
+        <nav class="mobile-menu-nav">
+            <ul class="mobile-menu-list">
+                <li class="mobile-menu-item">
+                    <a href="#children" class="mobile-menu-link">Дети</a>
+                </li>
+                <li class="mobile-menu-item">
+                    <a href="#about-fund" class="mobile-menu-link">О фонде</a>
+                </li>
+                <li class="mobile-menu-item">
+                    <a href="#how-it-works" class="mobile-menu-link">Как это работает</a>
+                </li>
+                <li class="mobile-menu-item">
+                    <a href="#faq" class="mobile-menu-link">FAQ</a>
+                </li>
+                <li class="mobile-menu-item">
+                    <a href="#contacts" class="mobile-menu-link">Контакты</a>
+                </li>
+            </ul>
+            <button class="mobile-menu-btn-donate">Пожертвовать</button>
+        </nav>
+    </div>
+
+    <!-- Child Modal Template -->
+    <div class="child-modal" id="childModal">
+        <div class="child-modal__content">
+            <button class="child-modal__close" id="childModalClose">&times;</button>
+            <div class="child-modal__video" id="childVideo">
+                Видео будет загружено из бэкенда
+            </div>
+            <h3 class="child-modal__name" id="childName">Имя ребенка</h3>
+            <p class="child-modal__tagline" id="childTagline">Описание ребенка</p>
+            <p class="child-modal__price" id="childPrice">СТОИМОСТЬ 0 ₽</p>
+            <div class="child-modal__description" id="childDescription">
+                Описание подарка и история ребенка
+            </div>
+            <div class="child-modal__actions">
+                <button class="button button_primary">Подарить подарок</button>
+                <button class="button button_secondary">Помочь всем детям</button>
+            </div>
+        </div>
+    </div>
+
 
     </section>
 
@@ -853,36 +946,40 @@
             </div>
             <div class="footer__main">
                 <div class="footer__columns">
-                <ul class="footer__menu-list">
-                    <li class="footer__menu-item">
-                        <a href="#" class="footer__menu-link">Дети</a>
-                    </li>
-                    <li class="footer__menu-item">
-                        <a href="#" class="footer__menu-link">О фонде</a>
-                    </li>
-                    <li class="footer__menu-item">
-                        <a href="#" class="footer__menu-link">Как это работает</a>
-                    </li>
-                    <li class="footer__menu-item">
-                        <a href="#" class="footer__menu-link">FAQ</a>
-                    </li>
-                    <li class="footer__menu-item">
-                        <a href="#" class="footer__menu-link">Контакты</a>
-                    </li>
-                </ul>
+                    <ul class="footer__menu-list">
+                        <li class="footer__menu-item">
+                            <a href="#" class="footer__menu-link">Дети</a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <a href="#" class="footer__menu-link">О фонде</a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <a href="#" class="footer__menu-link">Как это работает</a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <a href="#" class="footer__menu-link">FAQ</a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <a href="#" class="footer__menu-link">Контакты</a>
+                        </li>
+                    </ul>
 
                     <div class="footer__column">
                         <h4 class="footer__column-title">Президент фонда</h4>
                         <p class="footer__column-text">Пащенко Андрей Анатольевич</p>
                         <p class="footer__column-text">+7-988-140-14-79</p>
-                        <a class="footer__column-text footer__column-text-link" href="bfarhistratig@yandex.ru">bfarhistratig@yandex.ru</a>
-                        <a class="footer__column-text footer__column-text-link" href="apxucrpartnrфонд.рф">apxucrpartnrфонд.рф</a>
+                        <a class="footer__column-text footer__column-text-link"
+                            href="bfarhistratig@yandex.ru">bfarhistratig@yandex.ru</a>
+                        <a class="footer__column-text footer__column-text-link"
+                            href="apxucrpartnrфонд.рф">apxucrpartnrфонд.рф</a>
                     </div>
 
                     <div class="footer__column">
                         <h4 class="footer__column-title">Социальные сети</h4>
-                        <a class="footer__column-text footer__column-text-link" href="vk.com/arhistratigfond">vk.com/arhistratigfond</a>
-                        <a class="footer__column-text footer__column-text-link" href="t.me/bfarhistratig">t.me/bfarhistratig</a>
+                        <a class="footer__column-text footer__column-text-link"
+                            href="vk.com/arhistratigfond">vk.com/arhistratigfond</a>
+                        <a class="footer__column-text footer__column-text-link"
+                            href="t.me/bfarhistratig">t.me/bfarhistratig</a>
                     </div>
 
                     <div class="footer__column">
@@ -911,6 +1008,7 @@
     </footer>
     </main>
     </div>
+    <script src="./script.js"></script>
 </body>
 
 </html>
