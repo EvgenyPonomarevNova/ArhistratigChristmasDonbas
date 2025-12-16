@@ -684,7 +684,7 @@ button {
 
 .child-card .button {
   width: 100%;
-  padding: 12px;
+  padding: 24px 0px;
   font-family: var(--font-family);
   font-weight: 400;
   font-size: 13px;
@@ -1111,12 +1111,12 @@ button {
   height: auto;
   min-height: 923px;
   margin-bottom: 60px;
-  padding: 40px;
+  padding: 27px;
   background-color: var(--ice);
   background-size: cover;
   background-position: center;
   border: 1px solid #e5e7eb;
-  border-radius: 40px;
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
 }
@@ -1163,7 +1163,7 @@ button {
 
 .fund-info__text {
   border: 1px solid var(--grey);
-  border-radius: 100px;
+  border-radius: 30px;
   padding: 0 40px;
   width: 100%;
   max-width: 510px;
@@ -1244,7 +1244,7 @@ button {
 }
 
 .help-process__section {
-  padding: 45px 20px 45px 45px;
+  padding: 45px 20px 45px 30px;
 }
 
 .help-process__section-btn {
@@ -1531,9 +1531,9 @@ button {
   .hero__right-img img {
     width: 100%;
     height: auto !important;
-    max-width: 300px !important;
+    max-width: 243px !important;
     margin-bottom: 30px;
-    border-radius: 32px;
+    border-radius: 28px;
   }
 
   .hero__subtitle {
@@ -1869,10 +1869,9 @@ button {
     background: var(--ice);
     padding: 20px;
     margin-top: -6px;
-margin-left: 10px;
-margin-right: 10px;
-    
-}
+    margin-left: 10px;
+    margin-right: 10px;
+  }
 
   .help-process__section-title,
   .help-process__section-main {
@@ -2038,10 +2037,6 @@ margin-right: 10px;
     font-size: 24px;
   }
 
-  .child-card {
-    padding: 15px;
-  }
-
   .child-card__name {
     font-size: 40px;
   }
@@ -2121,7 +2116,7 @@ margin-right: 10px;
   }
 
   .hero__right-img img {
-    max-width: 250px !important;
+    max-width: 243px !important;
   }
 
   .stroke1 {
@@ -2219,5 +2214,31 @@ margin-right: 10px;
     max-width: 300px;
     margin: 0 auto;
     margin-bottom: 10px;
+  }
+  .button {
+    padding: 18px 0px;
+  }
+  .section-title,
+  .section-subtitle {
+    padding: 0px 42px;
+  }
+  .child-card .button {
+    padding: 24px 0px;
+    max-width: 260px;
+  }
+  .about__block-title br {
+    display: none;
+  }
+  .about__block-text {
+    padding-left: 20px;
+  }
+  .about__block h2 {
+    margin-top: 50px;
+  }
+  .about__block h3 {
+    margin: 28px 0 20px 0;
+  }
+  .child-card {
+    padding: 0;
   }
 }
