@@ -7,25 +7,25 @@ document.addEventListener('DOMContentLoaded', function() {
     const footerMenuLinks = document.querySelectorAll('.footer__menu-link[href^="#"]');
     
     // Функция для управления мобильным меню
-    function toggleMobileMenu() {
-        if (mobileMenuModal.classList.contains('active')) {
-            // Закрываем меню
-            mobileMenuModal.classList.remove('active');
-            mobileMenuBtn.classList.remove('active');
-            document.body.style.overflow = '';
-        } else {
-            // Открываем меню
-            mobileMenuModal.classList.add('active');
-            mobileMenuBtn.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-    }
-    
-    function closeMobileMenu() {
+  function toggleMobileMenu() {
+    if (mobileMenuModal.classList.contains('active')) {
+        // Закрываем меню
         mobileMenuModal.classList.remove('active');
-        mobileMenuBtn.classList.remove('active');
+        mobileMenuBtn.style.opacity = '1';
         document.body.style.overflow = '';
+    } else {
+        // Открываем меню
+        mobileMenuModal.classList.add('active');
+        mobileMenuBtn.style.opacity = '0';
+        document.body.style.overflow = 'hidden';
     }
+}
+
+function closeMobileMenu() {
+    mobileMenuModal.classList.remove('active');
+    mobileMenuBtn.style.opacity = '1';
+    document.body.style.overflow = '';
+}
     
     if (mobileMenuBtn) {
         mobileMenuBtn.addEventListener('click', toggleMobileMenu);
