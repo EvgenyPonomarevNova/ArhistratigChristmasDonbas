@@ -6,32 +6,43 @@ document.addEventListener('DOMContentLoaded', function() {
     const headerMenuLinks = document.querySelectorAll('.header__menu-link[href^="#"]');
     const footerMenuLinks = document.querySelectorAll('.footer__menu-link[href^="#"]');
     
-    if (mobileMenuBtn) {
-        mobileMenuBtn.addEventListener('click', function() {
+    // Функция для управления мобильным меню
+    function toggleMobileMenu() {
+        if (mobileMenuModal.classList.contains('active')) {
+            // Закрываем меню
+            mobileMenuModal.classList.remove('active');
+            mobileMenuBtn.classList.remove('active');
+            document.body.style.overflow = '';
+        } else {
+            // Открываем меню
             mobileMenuModal.classList.add('active');
+            mobileMenuBtn.classList.add('active');
             document.body.style.overflow = 'hidden';
-        });
+        }
+    }
+    
+    function closeMobileMenu() {
+        mobileMenuModal.classList.remove('active');
+        mobileMenuBtn.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+    
+    if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
     }
     
     if (mobileMenuClose) {
-        mobileMenuClose.addEventListener('click', function() {
-            mobileMenuModal.classList.remove('active');
-            document.body.style.overflow = '';
-        });
+        mobileMenuClose.addEventListener('click', closeMobileMenu);
     }
     
     mobileMenuModal.addEventListener('click', function(e) {
         if (e.target === mobileMenuModal) {
-            mobileMenuModal.classList.remove('active');
-            document.body.style.overflow = '';
+            closeMobileMenu();
         }
     });
     
     mobileMenuLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            mobileMenuModal.classList.remove('active');
-            document.body.style.overflow = '';
-        });
+        link.addEventListener('click', closeMobileMenu);
     });
     
     function smoothScroll(targetId) {
@@ -142,8 +153,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
             if (mobileMenuModal.classList.contains('active')) {
-                mobileMenuModal.classList.remove('active');
-                document.body.style.overflow = '';
+                closeMobileMenu();
             }
             if (childModal.classList.contains('active')) {
                 childModal.classList.remove('active');
@@ -152,12 +162,17 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
+    // Обновляем анимацию при наведении на кнопку
     mobileMenuBtn.addEventListener('mouseenter', function() {
-        this.style.transform = 'scale(1.1)';
+        if (!this.classList.contains('active')) {
+            this.style.transform = 'scale(1.1)';
+        }
     });
     
     mobileMenuBtn.addEventListener('mouseleave', function() {
-        this.style.transform = 'scale(1)';
+        if (!this.classList.contains('active')) {
+            this.style.transform = 'scale(1)';
+        }
     });
     
     const donateButtons = document.querySelectorAll('.header__menu-btn, .mobile-menu-btn-donate');
