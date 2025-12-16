@@ -76,7 +76,7 @@ button {
 }
 
 .header__logo img {
-    height: 40px;
+    height: 82px;
     width: auto;
 }
 
@@ -116,15 +116,12 @@ button {
     border-radius: 12px;
     width: 175px;
     height: 58px;
-    background: var(--gold);
-    color: white;
     font-family: var(--font-family);
     font-size: 16px;
     transition: all 0.3s;
 }
 
 .header__menu-btn:hover {
-    background: #a35c0f;
     transform: translateY(-2px);
 }
 
@@ -431,7 +428,6 @@ button {
     border-radius: 12px;
     padding: 24px;
     transition: transform 0.2s, box-shadow 0.2s;
-    background: white;
     cursor: pointer;
     border: 1px solid #eee;
 }
@@ -513,7 +509,7 @@ button {
     display: block;
     position: relative;
     left: 425px;
-    top: -92px;
+    top: -73px;
     max-width: 100%;
     height: auto;
 }

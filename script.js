@@ -1,6 +1,4 @@
-// Smooth scroll to sections
 document.addEventListener('DOMContentLoaded', function() {
-    // Mobile menu functionality
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const mobileMenuModal = document.getElementById('mobileMenuModal');
     const mobileMenuClose = document.getElementById('mobileMenuClose');
@@ -8,7 +6,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const headerMenuLinks = document.querySelectorAll('.header__menu-link[href^="#"]');
     const footerMenuLinks = document.querySelectorAll('.footer__menu-link[href^="#"]');
     
-    // Open mobile menu
     if (mobileMenuBtn) {
         mobileMenuBtn.addEventListener('click', function() {
             mobileMenuModal.classList.add('active');
@@ -16,7 +13,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Close mobile menu
     if (mobileMenuClose) {
         mobileMenuClose.addEventListener('click', function() {
             mobileMenuModal.classList.remove('active');
@@ -24,7 +20,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Close mobile menu when clicking outside
     mobileMenuModal.addEventListener('click', function(e) {
         if (e.target === mobileMenuModal) {
             mobileMenuModal.classList.remove('active');
@@ -32,7 +27,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Close mobile menu when clicking on links
     mobileMenuLinks.forEach(link => {
         link.addEventListener('click', function() {
             mobileMenuModal.classList.remove('active');
@@ -40,7 +34,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Smooth scroll function
     function smoothScroll(targetId) {
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
@@ -51,7 +44,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // Add click events to mobile menu links
     mobileMenuLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
@@ -60,7 +52,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Add click events to header menu links
     headerMenuLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
@@ -69,7 +60,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Add click events to footer menu links
     footerMenuLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
@@ -78,7 +68,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Update header links with correct hrefs
     const headerLinks = document.querySelectorAll('.header__menu-item a');
     if (headerLinks.length >= 5) {
         headerLinks[0].href = "#children";
@@ -88,7 +77,6 @@ document.addEventListener('DOMContentLoaded', function() {
         headerLinks[4].href = "#contacts";
     }
     
-    // Update footer links with correct hrefs
     const footerLinks = document.querySelectorAll('.footer__menu-item a');
     if (footerLinks.length >= 5) {
         footerLinks[0].href = "#children";
@@ -98,7 +86,6 @@ document.addEventListener('DOMContentLoaded', function() {
         footerLinks[4].href = "#contacts";
     }
     
-    // Add IDs to sections for navigation
     const childrenSection = document.querySelector('.children');
     const aboutSection = document.querySelector('.about');
     const fundInfoSection = document.querySelector('.fund-info');
@@ -111,12 +98,10 @@ document.addEventListener('DOMContentLoaded', function() {
     if (helpProcessSection) helpProcessSection.id = "faq";
     if (footerSection) footerSection.id = "contacts";
     
-    // Child modal functionality
     const childModal = document.getElementById('childModal');
     const childModalClose = document.getElementById('childModalClose');
     const childCards = document.querySelectorAll('.child-card');
     
-    // Open child modal
     childCards.forEach((card, index) => {
         card.addEventListener('click', function() {
             const childName = this.querySelector('.child-card__name')?.textContent || 'Ребенок';
@@ -140,7 +125,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Close child modal
     if (childModalClose) {
         childModalClose.addEventListener('click', function() {
             childModal.classList.remove('active');
@@ -148,7 +132,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Close child modal when clicking outside
     childModal.addEventListener('click', function(e) {
         if (e.target === childModal) {
             childModal.classList.remove('active');
@@ -156,7 +139,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Close modals with Escape key
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
             if (mobileMenuModal.classList.contains('active')) {
@@ -170,7 +152,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Add hover effect to mobile menu button
     mobileMenuBtn.addEventListener('mouseenter', function() {
         this.style.transform = 'scale(1.1)';
     });
@@ -179,33 +160,27 @@ document.addEventListener('DOMContentLoaded', function() {
         this.style.transform = 'scale(1)';
     });
     
-    // Make donate buttons functional
     const donateButtons = document.querySelectorAll('.header__menu-btn, .mobile-menu-btn-donate');
     donateButtons.forEach(button => {
         button.addEventListener('click', function() {
             alert('Функция пожертвования будет реализована в бэкенде');
-            // Здесь можно добавить редирект на страницу оплаты
         });
     });
     
-    // Make all "Подарить подарок" buttons functional
     const giftButtons = document.querySelectorAll('.child-card__button, .child-modal__actions .button_primary');
     giftButtons.forEach(button => {
         button.addEventListener('click', function(e) {
-            e.stopPropagation(); // Prevent opening modal when clicking the button inside card
+            e.stopPropagation();
             const childName = this.closest('.child-card')?.querySelector('.child-card__name')?.textContent || 
                             document.getElementById('childName')?.textContent || 'ребенку';
             alert(`Вы выбрали подарок для ${childName}. Функция оплаты будет реализована в бэкенде.`);
-            // Здесь можно добавить редирект на страницу оплаты
         });
     });
     
-    // Make "Помочь всем детям" buttons functional
     const helpAllButtons = document.querySelectorAll('.button_secondary:not(.child-modal__actions .button_secondary)');
     helpAllButtons.forEach(button => {
         button.addEventListener('click', function() {
             alert('Функция помощи всем детям будет реализована в бэкенде');
-            // Здесь можно добавить редирект на общую страницу пожертвований
         });
     });
 });
