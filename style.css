@@ -1392,86 +1392,82 @@ top: -22px;
 .footer__link:hover {
     color: var(--gold);
 }
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 1400px) {
-    .steps__wrap,
-    .steps__wrap-g1 {
-        flex-direction: column;
+/* ===== FIX HORIZONTAL SCROLL ===== */
+@media (max-width: 768px) {
+    body, html {
+        overflow-x: hidden;
         max-width: 100%;
-    }
-    
-    .wrap {
-        flex-direction: column;
-    }
-    
-    .step {
-        width: 100%;
-        height: auto;
-        min-height: 200px;
-    }
-    
-    .star1,
-    .star2,
-    .star3 {
-        display: none;
-    }
-}
-
-@media (max-width: 1200px) {
-    .hero {
-        flex-direction: column;
-        padding: 40px 20px;
-        gap: 40px;
-    }
-    
-    .hero__left,
-    .hero__right {
-        padding: 0;
         width: 100%;
     }
     
+    .page {
+        width: 100%;
+        max-width: 100%;
+        padding: 0 15px;
+        overflow-x: hidden;
+        margin: 0 auto;
+    }
+    
+    /* Убираем все фиксированные ширины и позиции которые вызывают скролл */
     .hero__right-img img {
         width: 100%;
-        max-width: 438px;
+        max-width: 300px;
         height: auto;
     }
     
-    .children-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    
-    .about__content {
-        grid-template-columns: 1fr;
-    }
-    
-    .fund-info__content-wrap {
-        flex-direction: column;
-    }
-    
-    .fund-info__block {
-        max-width: 100%;
-    }
-    
-    .help-process-wrap {
-        flex-direction: column;
-    }
-    
-    .help-process__info {
-        flex-direction: column;
-        gap: 30px;
-    }
-    
-    .help-process__steps {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 1024px) {
-    .header__menu-list {
+    .stroke1, .stroke2 {
         display: none;
     }
     
+    .hero__feature {
+        display: none;
+    }
+    
+    .child-card-img {
+        position: static;
+        display: block;
+        margin: 20px auto;
+        max-width: 100%;
+        height: auto;
+        left: 0;
+        top: 0;
+    }
+    
+    /* Убираем абсолютные позиции на мобилке */
+    .star1, .star2, .star3 {
+        display: none;
+    }
+    
+    /* Исправляем блоки с фиксированной шириной */
+    .hero__actions .button,
+    .about__options-actions .button,
+    .help-process__section-btn .button {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .qa__item,
+    .step,
+    .fund-info__block,
+    .help-process__step {
+        width: 100%;
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+/* ===== HERO - строго по структуре ===== */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        padding: 30px 0;
+        text-align: center;
+        width: 100%;
+    }
+    
+    /* Хедер без навигации */
+    .header__menu-list,
     .header__menu-btn {
         display: none;
     }
@@ -1480,210 +1476,547 @@ top: -22px;
         display: flex;
     }
     
-    .children-grid {
-        grid-template-columns: repeat(2, 1fr);
+    /* Hero__title по центру */
+    .hero__title {
+        text-align: center;
+        font-size: 28px;
+        width: 100%;
+        margin: 0 auto 20px;
     }
     
-    .stats {
-        grid-template-columns: repeat(2, 1fr);
+    /* Hero__right по центру (картинка) */
+    .hero__right {
+        order: 2;
+        width: 100%;
+        padding-top: 0;
+        margin: 20px auto 0;
+        display: flex;
+        justify-content: center;
     }
     
-    .footer__columns {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
+    .hero__right-img {
+        width: 100%;
+        max-width: 280px;
+        position: relative;
+        margin: 0 auto;
     }
     
-    .help-process__section-btn {
-        flex-direction: column;
-        align-items: stretch;
+    .hero__right-img img {
+        width: 100%;
+        height: auto;
     }
     
-    .button_secondary {
+    /* Hero__subtitle по левому краю */
+    .hero__subtitle {
+        order: 3;
+        text-align: left;
+        font-size: 16px;
+        padding: 20px 0;
         width: 100%;
     }
     
-    .fund-info__main-title,
-    .fund-info__sub-title,
-    .section-subtitle,
-    .about__block-title,
-    .about__block h3,
-    .help-process__section-main {
-        font-size: 48px;
+    /* Hero__actions кнопки друг под другом по центру */
+    .hero__actions {
+        order: 4;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin: 0 auto 20px;
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    /* Hero__stats друг под другом по левому краю */
+    .hero__stats {
+        order: 5;
+        text-align: left;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .hero__stats-item {
+        display: block;
+        margin-bottom: 10px;
+    }
+    
+    /* Переставляем элементы в правильном порядке */
+    .hero__left {
+        order: 1;
+        padding-left: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
     }
 }
 
+/* ===== STATS ===== */
 @media (max-width: 768px) {
-    .page {
-        padding: 0 15px;
-    }
-    
-    .header {
-        padding: 15px 0;
-    }
-    
-    .hero__title {
-        font-size: 32px;
-    }
-    
-    .hero__subtitle {
-        font-size: 18px;
-    }
-    
-    .hero__actions {
-        flex-direction: column;
-    }
-    
-    .button {
-        width: 100%;
-        max-width: 100%;
-    }
-    
-    .hero__features {
+    .stats {
+        display: flex;
         flex-direction: column;
         gap: 20px;
-    }
-    
-    .hero__feature:not(:last-child)::after {
-        display: none;
-    }
-    
-    .stats {
-        grid-template-columns: 1fr;
         padding: 20px;
-    }
-    
-    .section-subtitle,
-    .about__block-title,
-    .about__block h3,
-    .fund-info__main-title,
-    .fund-info__sub-title,
-    .help-process__section-main {
-        font-size: 36px;
-    }
-    
-    .children-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .child-card__name {
-        font-size: 32px;
-    }
-    
-    .child-card-img {
-        position: static;
         margin: 20px auto;
-        display: block;
-        max-width: 100%;
+        text-align: center;
+        width: 100%;
     }
     
-    .about__content {
+    .stats__item {
+        width: 100%;
+    }
+}
+
+/* ===== CHILDREN ===== */
+@media (max-width: 768px) {
+    .children {
+        padding: 40px 0;
+        width: 100%;
+    }
+    
+    /* Заголовки по центру */
+    .section-title,
+    .section-subtitle {
+        text-align: center;
+        width: 100%;
+        padding: 0 10px;
+    }
+    
+    /* Child-card каждый друг под другом */
+    .children-grid {
+        display: flex;
+        flex-direction: column;
         gap: 30px;
+        width: 100%;
+        margin: 0 auto;
     }
     
-    .about__block,
+    .child-card {
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+}
+
+/* ===== ABOUT ===== */
+@media (max-width: 768px) {
+    .about {
+        padding: 40px 0;
+        width: 100%;
+    }
+    
+    /* Заголовки по центру */
+    .about__title-block {
+        text-align: center;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    
+    /* Картинка */
+    .about__content-img {
+        order: 1;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    
+    .about__content-img img {
+        width: 100%;
+        height: auto;
+    }
+    
+    /* Текст */
+    .about__block-text {
+        order: 2;
+        text-align: left;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    
+    /* QA элементы друг под другом */
+    .qa {
+        order: 3;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    
     .qa__item {
+        width: 100%;
+        margin-bottom: 20px;
         padding: 20px;
     }
     
-    .qa__item {
-        height: auto;
-        min-height: 195px;
+    /* Картинка child-card-img под последним QA */
+    .child-card-img {
+        order: 4;
+        display: block;
+        width: 100%;
+        max-width: 250px;
+        margin: 30px auto 0;
+    }
+    
+    /* Перестраиваем структуру about__content */
+    .about__content {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/* ===== ABOUT__BLOCK (ПОМОЧЬ ПРОСТО) ===== */
+@media (max-width: 768px) {
+    .about__block:last-child {
+        width: 100%;
+        margin-top: 40px;
+    }
+    
+    /* Картинка steps__wrap-g2 сверху */
+    .steps__wrap-g2 {
+        order: 1;
+        width: 100%;
+        margin-bottom: 30px;
     }
     
     .steps__wrap-g2 img {
         width: 100%;
         height: auto;
+        border-radius: 15px;
+    }
+    
+    /* Заголовки ПОМОЧЬ ПРОСТО */
+    .about__block h2 {
+        order: 2;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    
+    .about__block h3 {
+        order: 3;
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 28px;
+    }
+    
+    /* 4 карточки step по порядку */
+    .steps__wrap {
+        order: 4;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-bottom: 30px;
+    }
+    
+    .steps__wrap-g1 {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .step {
+        width: 100%;
+        padding: 20px;
+        height: auto;
+        min-height: 140px;
+    }
+    
+    /* Star элементы для 4-й карточки */
+    .star1, .star2, .star3 {
+        display: none;
+    }
+    
+    /* About__options после карточек */
+    .about__options {
+        order: 5;
+        margin-top: 30px;
+        padding: 20px;
+        text-align: left;
+    }
+    
+    .about__options-text {
+        text-align: left;
+        margin-bottom: 20px;
     }
     
     .about__options-actions {
         flex-direction: column;
+        gap: 15px;
+        align-items: center;
     }
     
-    .fund-info__text {
-        padding: 15px 20px;
-        border-radius: 50px;
+    .about__options-actions .button {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* ===== FUND-INFO ===== */
+@media (max-width: 768px) {
+    .fund-info {
+        padding: 40px 0;
+        width: 100%;
     }
     
-    .fund-info__actions {
+    /* Заголовки по центру */
+    .fund-info__main-title,
+    .fund-info__sub-title {
+        text-align: center;
+        font-size: 28px;
+        margin-bottom: 20px;
+        width: 100%;
+    }
+    
+    /* Fund-info__block */
+    .fund-info__content-wrap {
         flex-direction: column;
-    }
-    
-    .footer__main {
-        flex-direction: column;
-        gap: 40px;
-    }
-    
-    .footer__columns {
-        grid-template-columns: 1fr;
         gap: 30px;
     }
     
-    .footer__bottom {
-        flex-direction: column;
+    .fund-info__block {
+        width: 100%;
+        padding: 25px;
+    }
+    
+    /* Убираем кнопки из первого блока */
+    .fund-info__block:first-child .fund-info__actions {
+        display: none;
+    }
+    
+    /* Заголовок и текст вверху */
+    .fund-info__block-title {
+        margin-bottom: 20px;
+    }
+    
+    .fund-info__text {
+        margin: 20px 0;
+        padding: 15px;
+    }
+}
+
+/* ===== HELP-PROCESS ===== */
+@media (max-width: 768px) {
+    .help-process {
+        padding: 40px 0;
+        width: 100%;
+    }
+    
+    /* Заголовки */
+    .help-process__section-title,
+    .help-process__section-main {
         text-align: center;
-        gap: 20px;
+        width: 100%;
     }
     
-    .footer__links {
+    .help-process__section-main {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+    
+    /* Фото help-process-img после заголовков */
+    .help-process-wrap > div:last-child {
+        order: 1;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    
+    .help-process-wrap > div:last-child img {
+        width: 100%;
+        height: auto;
+        border-radius: 15px;
+    }
+    
+    /* Help-process__step-content друг под другом */
+    .help-process__steps {
+        order: 2;
+        display: flex;
         flex-direction: column;
-        gap: 15px;
+        gap: 20px;
+        margin-bottom: 30px;
     }
     
-    .help-process__section {
+    .help-process__step {
+        width: 100%;
         padding: 20px;
     }
     
-    .help-process__section-wr {
+    .help-process__step-content {
         flex-direction: column;
         align-items: flex-start;
         gap: 15px;
     }
     
-    .child-modal__content {
-        padding: 20px;
-        margin: 10px;
+    /* Help-process__section-btn после step-content */
+    .help-process__actions {
+        order: 3;
+        margin-top: 0;
     }
     
-    .child-modal__video {
-        height: 250px;
+    .help-process__section-btn {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
     }
     
-    .child-modal__name {
-        font-size: 36px;
+    .help-process__section-btn .button {
+        width: 100%;
+        max-width: 300px;
     }
 }
 
+/* ===== FOOTER ===== */
+@media (max-width: 768px) {
+    .footer {
+        padding: 40px 0 30px;
+        width: 100%;
+    }
+    
+    /* Навигацию убираем */
+    .footer__menu-list {
+        display: none;
+    }
+    
+    /* Все пункты друг под другом по левому краю */
+    .footer__main {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .footer__columns {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        text-align: left;
+        width: 100%;
+    }
+    
+    .footer__column {
+        width: 100%;
+    }
+    
+    .footer__column-title {
+        text-align: left;
+        margin-bottom: 15px;
+    }
+    
+    .footer__column-text,
+    .footer__column-text-te,
+    .footer__column-text-link {
+        text-align: left;
+        display: block;
+        margin-bottom: 8px;
+    }
+    
+    .footer__bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        text-align: left;
+        margin-top: 30px;
+    }
+    
+    .footer__links {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+}
+
+/* ===== ДОПОЛНИТЕЛЬНЫЕ ИСПРАВЛЕНИЯ ШИРИНЫ ===== */
+@media (max-width: 768px) {
+    /* Убираем все возможные причины горизонтального скролла */
+    .header,
+    .hero,
+    .stats,
+    .children,
+    .about,
+    .fund-info,
+    .help-process,
+    .footer,
+    .content {
+        width: 100%;
+        max-width: 100vw;
+        overflow-x: hidden;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    
+    /* Исправляем внутренние элементы */
+    .hero__left,
+    .hero__right,
+    .children-grid,
+    .about__content,
+    .about__block,
+    .fund-info__content,
+    .help-process-wrap,
+    .footer__content {
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    
+    /* Исправляем кнопки и карточки */
+    .button,
+    .child-card,
+    .qa__item,
+    .step,
+    .fund-info__block,
+    .help-process__step {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    
+    /* Убираем горизонтальный скролл на body */
+    body {
+        overflow-x: hidden;
+        width: 100%;
+        position: relative;
+    }
+}
+
+/* ===== ОЧЕНЬ МАЛЕНЬКИЕ ЭКРАНЫ ===== */
 @media (max-width: 480px) {
+    .page {
+        padding: 0 10px;
+    }
+    
     .hero__title {
-        font-size: 28px;
+        font-size: 24px;
     }
     
     .hero__subtitle {
-        font-size: 16px;
+        font-size: 15px;
     }
     
     .section-subtitle,
     .about__block-title,
-    .about__block h3,
     .fund-info__main-title,
-    .fund-info__sub-title,
     .help-process__section-main {
-        font-size: 28px;
+        font-size: 24px;
+    }
+    
+    .child-card {
+        padding: 15px;
     }
     
     .child-card__name {
-        font-size: 28px;
+        font-size: 22px;
     }
     
-    .step__number {
-        font-size: 40px;
+    /* Ещё более агрессивно убираем горизонтальный скролл */
+    * {
+        max-width: 100vw;
     }
     
-    .step__description {
-        font-size: 16px;
-    }
-    
-    .footer__column-text {
-        font-size: 16px;
+    img {
+        max-width: 100%;
+        height: auto;
     }
 }
