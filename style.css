@@ -333,10 +333,6 @@ button {
 }
 
 .hero__features {
-    display: flex;
-    justify-content: flex-start;
-    gap: 40px;
-    margin-top: 30px;
     font-size: 14px;
     color: #666666;
     position: relative;
@@ -366,6 +362,9 @@ background-color: #fff;
     top: -110px;
     z-index: 150;
 }
+.hero__right-img {
+    position: relative;
+}
 
 .stroke2 {
     border: 1px solid var(--grey);
@@ -374,8 +373,8 @@ width: 282px;
 height: 433px;
 z-index: 1;
 position: absolute;
-top: 410px;
-    right: 90px;
+top: 160px;
+    right: 30px;
 }
 
 .stroke1 {
@@ -384,8 +383,8 @@ border-radius: 60px;
 width: 436px;
 height: 517px;
 position: absolute;
-top: 240px;
-right: 130px;
+top: -22px;
+    right: 80px;
 }
 
 #stroke1-img {
@@ -408,6 +407,7 @@ right: 130px;
 .hero__right {
     flex-shrink: 0;
     padding-top: 60px;
+    margin-right: 70px;
 }
 
 .stats {
