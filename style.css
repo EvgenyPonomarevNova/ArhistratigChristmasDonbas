@@ -248,8 +248,8 @@ button {
 
 .hero__title-sp {
     font-weight: 300;
-    display: block;
     margin-top: 10px;
+    max-width: 550px;
 }
 
 .hero__subtitle {
@@ -260,6 +260,7 @@ button {
     color: var(--grey);
     text-align: left;
     padding-bottom: 40px;
+    max-width: 550px;
 }
 
 .hero__actions {
@@ -269,10 +270,12 @@ button {
 }
 
 .hero__right-img img {
+    position: relative;
     border-radius: 50px;
     width: 438px;
     height: 572px;
     object-fit: cover;
+    z-index: 100;
 }
 
 .button {
@@ -341,8 +344,59 @@ button {
 
 .hero__feature {
     position: relative;
-    padding-right: 40px;
+    border: 1px solid var(--grey);
+border-radius: 100px;
+padding: 16px 24px;
+background-color: #fff;
 }
+
+.hero__feature-btn1 {
+    top: -556px;
+    left: 403px;
+    z-index: 150;
+}
+
+.hero__feature-btn2 {
+    top: -200px;
+    z-index: 150;
+}
+
+.hero__feature-btn3 {
+    left: -370px;
+    top: -110px;
+    z-index: 150;
+}
+
+.stroke2 {
+    border: 1px solid var(--grey);
+border-radius: 60px;
+width: 282px;
+height: 433px;
+z-index: 1;
+position: absolute;
+top: 410px;
+    right: 90px;
+}
+
+.stroke1 {
+border: 1px solid #111;
+border-radius: 60px;
+width: 436px;
+height: 517px;
+position: absolute;
+top: 240px;
+right: 130px;
+}
+
+#stroke1-img {
+   position: relative;
+    width: 123px;
+    height: 123px;
+    z-index: 200;
+    right: 217px;
+    top: -50px;
+}
+
 
 .hero__feature:not(:last-child)::after {
     content: "→";
@@ -352,8 +406,8 @@ button {
 }
 
 .hero__right {
-    padding-right: 40px;
     flex-shrink: 0;
+    padding-top: 60px;
 }
 
 .stats {
