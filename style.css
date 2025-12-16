@@ -2029,6 +2029,10 @@ button {
     font-size: 24px;
     margin-bottom: 20px;
   }
+  .help-process__section {
+
+    margin: 0 AUTO;
+}
 
   .section-subtitle,
   .about__block-title,
