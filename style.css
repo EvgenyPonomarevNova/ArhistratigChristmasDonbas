@@ -304,8 +304,8 @@ button {
 }
 
 .button_secondary {
-    color: var(--grey);
-    border: 1px solid var(--grey);
+    color: #fff;
+    border: 1px solid #fff;
     background: transparent;
 }
 
@@ -1057,7 +1057,6 @@ top: -22px;
     border-radius: 40px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 
 .fund-info__block-img img {
