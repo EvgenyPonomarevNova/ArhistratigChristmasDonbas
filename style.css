@@ -1,4 +1,3 @@
-/* ===== BASE & RESET ===== */
 * {
     margin: 0;
     padding: 0;
@@ -40,7 +39,6 @@ button {
     font-family: inherit;
 }
 
-/* ===== PAGE LAYOUT ===== */
 .page {
     min-height: 100vh;
     display: flex;
@@ -54,7 +52,6 @@ button {
     flex: 1;
 }
 
-/* ===== HEADER ===== */
 .header {
     display: flex;
     align-items: center;
@@ -125,7 +122,6 @@ button {
     transform: translateY(-2px);
 }
 
-/* Mobile Menu Button */
 .mobile-menu-btn {
     display: none;
     flex-direction: column;
@@ -146,7 +142,6 @@ button {
     transition: all 0.3s;
 }
 
-/* Mobile Menu Modal */
 .mobile-menu-modal {
     display: none;
     position: fixed;
@@ -220,7 +215,6 @@ button {
     border: none;
 }
 
-/* ===== HERO SECTION ===== */
 .hero {
     padding: 60px 0 40px;
     text-align: center;
@@ -229,6 +223,10 @@ button {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+#hero-mob{
+    display: none;
 }
 
 .hero__left {
@@ -304,9 +302,13 @@ button {
 }
 
 .button_secondary {
-    color: #fff;
-    border: 1px solid #fff;
-    background: transparent;
+font-family: var(--font-family);
+font-weight: 400;
+font-size: 19px;
+line-height: 147%;
+color: var(--grey);
+border: 1px solid var(--grey);
+    border-radius: 14px;
 }
 
 .button_secondary:hover {
@@ -328,8 +330,15 @@ button {
 }
 
 .hero__stats-number {
-    font-weight: 700;
-    color: #1a1a1a;
+    font-family: var(--font-family);
+font-size: 14px;
+color: var(--grey);
+font-weight: 700;
+}
+
+.hero__stats-text {
+    font-weight: 400;
+    font-style: italic;
 }
 
 .hero__features {
@@ -341,61 +350,61 @@ button {
 .hero__feature {
     position: relative;
     border: 1px solid var(--grey);
-border-radius: 100px;
-padding: 16px 24px;
-background-color: #fff;
+    border-radius: 100px;
+    padding: 8px 24px;
+    background-color: #fff;
 }
 
 .hero__feature-btn1 {
-    top: -556px;
-    left: 403px;
+    top: -531px;
+    left: 365px;
     z-index: 150;
 }
 
 .hero__feature-btn2 {
-    top: -200px;
+    top: -169px;
     z-index: 150;
 }
 
 .hero__feature-btn3 {
-    left: -370px;
-    top: -110px;
+    left: -337px;
+    top: -81px;
     z-index: 150;
 }
+
 .hero__right-img {
     position: relative;
 }
 
 .stroke2 {
     border: 1px solid var(--grey);
-border-radius: 60px;
-width: 282px;
-height: 433px;
-z-index: 1;
-position: absolute;
-top: 160px;
+    border-radius: 60px;
+    width: 282px;
+    height: 433px;
+    z-index: 1;
+    position: absolute;
+    top: 160px;
     right: 30px;
 }
 
 .stroke1 {
-border: 1px solid #111;
-border-radius: 60px;
-width: 436px;
-height: 517px;
-position: absolute;
-top: -22px;
+    border: 1px solid #111;
+    border-radius: 60px;
+    width: 436px;
+    height: 517px;
+    position: absolute;
+    top: -22px;
     right: 80px;
 }
 
 #stroke1-img {
-   position: relative;
+    position: relative;
     width: 123px;
     height: 123px;
     z-index: 200;
     right: 217px;
     top: -50px;
 }
-
 
 .hero__feature:not(:last-child)::after {
     content: "→";
@@ -441,7 +450,6 @@ top: -22px;
     color: var(--grey);
 }
 
-/* ===== CHILDREN SECTION ===== */
 .children {
     padding: 80px 0;
 }
@@ -568,7 +576,6 @@ top: -22px;
     height: auto;
 }
 
-/* Child Modal */
 .child-modal {
     display: none;
     position: fixed;
@@ -666,52 +673,6 @@ top: -22px;
     height: auto;
 }
 
-/* ===== STORIES SECTION ===== */
-.stories {
-    padding: 60px 0;
-    background-color: #f9fafb;
-    border-radius: 16px;
-    margin: 40px 0;
-}
-
-.story {
-    max-width: 800px;
-    margin: 0 auto 40px;
-    padding: 30px;
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-}
-
-.story__name {
-    font-size: 26px;
-    font-weight: 700;
-    color: #1a1a1a;
-    margin-bottom: 8px;
-}
-
-.story__tagline {
-    font-size: 16px;
-    color: #666666;
-    font-style: italic;
-    margin-bottom: 8px;
-}
-
-.story__price {
-    font-size: 18px;
-    color: #2563eb;
-    font-weight: 600;
-    margin-bottom: 20px;
-}
-
-.story__text {
-    font-size: 16px;
-    color: #4b5563;
-    line-height: 1.7;
-    margin-bottom: 24px;
-}
-
-/* ===== ABOUT SECTION ===== */
 .about {
     padding: 80px 0;
 }
@@ -977,36 +938,6 @@ top: -22px;
     color: var(--grey);
 }
 
-.about__footer {
-    text-align: center;
-    padding: 50px;
-    background-color: #f0f9ff;
-    border-radius: 16px;
-    margin-top: 60px;
-}
-
-.about__footer-title {
-    font-size: 22px;
-    font-weight: 700;
-    color: #1a1a1a;
-    margin-bottom: 16px;
-}
-
-.about__footer-text {
-    font-size: 16px;
-    color: #666666;
-    max-width: 600px;
-    margin: 0 auto 30px;
-    line-height: 1.6;
-}
-
-.about__footer-actions {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-}
-
-/* ===== FUND INFO ===== */
 .fund-info {
     padding: 80px 0;
 }
@@ -1122,7 +1053,6 @@ top: -22px;
     flex-wrap: wrap;
 }
 
-/* HELP PROCESS */
 .help-process {
     padding: 80px 0;
     background-color: #ffffff;
@@ -1245,12 +1175,11 @@ top: -22px;
 }
 
 .help-process__step-content img {
-    width: 40px;
-    height: 40px;
+    width: 25px;
+    height: 25px;
     flex-shrink: 0;
 }
 
-/* ===== FOOTER ===== */
 .footer {
     background-color: var(--ice);
     padding: 60px 0 40px;
@@ -1281,6 +1210,10 @@ top: -22px;
     flex-direction: column;
     min-width: 200px;
 }
+
+ .footer__logo-bottom img {
+display: none;
+    }
 
 .footer__logo-line {
     font-family: var(--second-family);
@@ -1399,7 +1332,7 @@ top: -22px;
 .footer__link:hover {
     color: var(--gold);
 }
-/* ===== FIX HORIZONTAL SCROLL ===== */
+
 @media (max-width: 768px) {
     body, html {
         overflow-x: hidden;
@@ -1415,61 +1348,6 @@ top: -22px;
         margin: 0 auto;
     }
     
-    /* Убираем все фиксированные ширины и позиции которые вызывают скролл */
-    .hero__right-img img {
-        width: 100%;
-        max-width: 300px;
-        height: auto;
-    }
-    
-    .stroke1, .stroke2 {
-        display: none;
-    }
-    
-    .hero__feature {
-        display: none;
-    }
-    
-    .child-card-img {
-        display: block;
-        margin: 20px auto;
-        max-width: 100%;
-        height: auto;
-        left: 0;
-        top: -25px;
-    }
-    
-
-    
-    /* Исправляем блоки с фиксированной шириной */
-    .hero__actions .button,
-    .about__options-actions .button,
-    .help-process__section-btn .button {
-        width: 100%;
-        max-width: 100%;
-    }
-    
-    .qa__item,
-    .step,
-    .fund-info__block,
-    .help-process__step {
-        width: 100%;
-        max-width: 100%;
-        margin-left: 0;
-        margin-right: 0;
-    }
-}
-
-/* ===== HERO - строго по структуре ===== */
-@media (max-width: 768px) {
-    .hero {
-        flex-direction: column;
-        padding: 30px 0;
-        text-align: center;
-        width: 100%;
-    }
-    
-    /* Хедер без навигации */
     .header__menu-list,
     .header__menu-btn {
         display: none;
@@ -1479,81 +1357,116 @@ top: -22px;
         display: flex;
     }
     
-    /* Hero__title по центру */
-    .hero__title {
-        text-align: center;
-        font-size: 28px;
-        width: 100%;
-        margin: 0 auto 20px;
+    .hero {
+        display: flex !important;
+        flex-direction: column !important;
+        padding: 30px 20px !important;
+        gap: 20px !important;
+        margin-bottom: 100px;
     }
     
-    /* Hero__right по центру (картинка) */
+    .hero__left {
+        order: 1 !important;
+        padding-left: 0 !important;
+        width: 100% !important;
+        text-align: center !important;
+    }
+    
+    .hero__title {
+        text-align: center !important;
+        font-size: 32px !important;
+        margin: 0 0 10px 0 !important;
+        padding: 0 !important;
+    }
+    
     .hero__right {
-        order: 2;
-        width: 100%;
-        padding-top: 0;
-        margin: 20px auto 0;
-        display: flex;
-        justify-content: center;
+display: none;
+    }
+    #hero-mob{
+
+        display: block;
     }
     
     .hero__right-img {
-        width: 100%;
-        max-width: 280px;
-        position: relative;
-        margin: 0 auto;
+        width: 100% !important;
+        max-width: 280px !important;
+        margin: 0 auto !important;
     }
     
     .hero__right-img img {
         width: 100%;
-        height: auto;
+        height: auto !important;
+        max-width: 300px !important;
+        margin-bottom: 30px;
+        border-radius: 32px;
     }
     
-    /* Hero__subtitle по левому краю */
     .hero__subtitle {
-        order: 3;
-        text-align: left;
-        font-size: 16px;
-        padding: 20px 0;
-        width: 100%;
-    }
-    
-    /* Hero__actions кнопки друг под другом по центру */
-    .hero__actions {
-        order: 4;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        margin: 0 auto 20px;
-        width: 100%;
-        max-width: 300px;
-    }
-    
-    /* Hero__stats друг под другом по левому краю */
-    .hero__stats {
-        order: 5;
-        text-align: left;
-        width: 100%;
-        margin-bottom: 20px;
-    }
-    
-    .hero__stats-item {
-        display: block;
-        margin-bottom: 10px;
-    }
-    
-    /* Переставляем элементы в правильном порядке */
-    .hero__left {
-        order: 1;
-        padding-left: 0;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-    }
-}
+        order: 3 !important;
+        text-align: left !important;
+        padding: 0 !important;
+        width: 100% !important;
+        margin-bottom: 30px;
 
-/* ===== STATS ===== */
-@media (max-width: 768px) {
+    }
+    
+    .hero__actions {
+        order: 4 !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 15px !important;
+        margin: 0 auto !important;
+        width: 100% !important;
+        max-width: 300px !important;
+        padding-bottom: 30px;
+    }
+    
+    .hero__stats {
+        text-align: center;
+    }
+    
+    .stroke1  {
+        max-width: 243px;
+        max-height: 287px;
+        right: 55px;
+    top: -14px;
+    border-radius: 32px;
+    }
+    .stroke2 {
+        max-width: 157px;
+        max-height: 241px;
+        right: -15px;
+    top: 140px;
+    border-radius: 32px;
+    }
+    .hero__feature{
+            padding: 5px 3px;
+    }
+
+    #stroke1-img {
+        width: 35%;
+right: 121px;
+        top: -36px;
+    }
+    .hero__feature-btn2 {
+        top: -137px;
+        right: 100px;
+    }
+     .hero__feature-btn1 {
+        left: 165px;
+        top: -364px;
+    }
+     .hero__feature-btn3 {
+        left: -92px;
+        top: -113px;
+    }
+    .hero__actions .button,
+    .about__options-actions .button,
+    .help-process__section-btn .button {
+        width: 100%;
+        max-width: 100%;
+    }
+    
     .stats {
         display: flex;
         flex-direction: column;
@@ -1567,16 +1480,12 @@ top: -22px;
     .stats__item {
         width: 100%;
     }
-}
-
-/* ===== CHILDREN ===== */
-@media (max-width: 768px) {
+    
     .children {
         padding: 40px 0;
         width: 100%;
     }
     
-    /* Заголовки по центру */
     .section-title,
     .section-subtitle {
         text-align: center;
@@ -1584,7 +1493,6 @@ top: -22px;
         padding: 0 60px;
     }
     
-    /* Child-card каждый друг под другом */
     .children-grid {
         display: flex;
         flex-direction: column;
@@ -1601,27 +1509,31 @@ top: -22px;
     }
 
     .child-card .button {
-    max-width: 235px;
+        max-width: 235px;
         margin: 0 auto;
         display: block;
     }
-}
-
-/* ===== ABOUT ===== */
-@media (max-width: 768px) {
+    
+    .child-card-img {
+        display: block;
+        margin: 20px auto;
+        max-width: 100%;
+        height: auto;
+        left: 0;
+        top: -25px;
+    }
+    
     .about {
         padding: 40px 0;
         width: 100%;
     }
     
-    /* Заголовки по центру */
     .about__title-block {
         text-align: center;
         width: 100%;
         margin-bottom: 30px;
     }
     
-    /* Картинка */
     .about__content-img {
         width: 100%;
         margin-bottom: 30px;
@@ -1632,17 +1544,13 @@ top: -22px;
         height: auto;
     }
     
-    /* Текст */
     .about__block-text {
-        order: 2;
         text-align: left;
         width: 100%;
         margin-bottom: 30px;
     }
     
-    /* QA элементы друг под другом */
     .qa {
-        order: 3;
         width: 100%;
         margin-bottom: 30px;
     }
@@ -1653,6 +1561,7 @@ top: -22px;
         padding: 20px;
         height: auto;
     }
+    
     #child-card-ds {
         display: none;
     }
@@ -1661,27 +1570,16 @@ top: -22px;
         display: block;
     }
     
-    /* Картинка child-card-img под последним QA */
-    .child-card-img {
-        order: 4;
-        display: block;
-        width: 100%;
-        max-width: 250px;
-    }
-    
-    /* Перестраиваем структуру about__content */
     .about__content {
         display: flex;
         flex-direction: column;
         margin-bottom: 0;
     }
+    
     .about__block {
         padding-bottom: 0;
     }
-}
-
-/* Мобильная версия - Grid перестановка */
-@media (max-width: 768px) {
+    
     .about__block:last-child {
         display: grid;
         grid-template-areas:
@@ -1696,7 +1594,6 @@ top: -22px;
         gap: 20px;
     }
     
-    /* Задаем grid-areas для каждого элемента */
     .steps__wrap-g2 {
         grid-area: image;
         width: 100%;
@@ -1725,16 +1622,17 @@ top: -22px;
         top: 250px;
         max-width: 67px;
     }
+    
     .star2 {
         top: 630px;
         max-width: 200px;
         left: 102px;
     }
+    
     .star3 {
-       top: 725px;
+        top: 725px;
         left: 230px;
         max-width: 83px;
-
     }
     
     .step:nth-child(3) {
@@ -1753,7 +1651,6 @@ top: -22px;
         margin-top: 150px;
     }
     
-    /* Прячем оригинальные обертки */
     .steps,
     .steps__wrap,
     .steps__wrap-g1,
@@ -1762,7 +1659,6 @@ top: -22px;
         display: contents;
     }
     
-    /* Стили для карточек */
     .step {
         width: 100%;
         padding: 20px;
@@ -1770,18 +1666,21 @@ top: -22px;
         min-height: 140px;
     }
     
-}
-
-
-
-/* ===== FUND-INFO ===== */
-@media (max-width: 768px) {
+    .qa__item,
+    .step,
+    .fund-info__block,
+    .help-process__step {
+        width: 100%;
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    
     .fund-info {
         padding: 40px 0;
         width: 100%;
     }
     
-    /* Заголовки по центру */
     .fund-info__main-title,
     .fund-info__sub-title {
         text-align: center;
@@ -1790,7 +1689,6 @@ top: -22px;
         width: 100%;
     }
     
-    /* Fund-info__block */
     .fund-info__content-wrap {
         flex-direction: column;
         gap: 30px;
@@ -1803,13 +1701,12 @@ top: -22px;
         min-height: 600px;
     }
     
-    /* Убираем кнопки из первого блока */
     .fund-info__block:first-child .fund-info__actions {
         display: none;
     }
     
-    /* Заголовок и текст вверху */
-    .fund-info__block-title,  .fund-info__block-title2{
+    .fund-info__block-title,
+    .fund-info__block-title2 {
         margin-bottom: 20px;
         font-size: 30px;
     }
@@ -1819,16 +1716,12 @@ top: -22px;
         padding: 15px;
         font-size: 13px;
     }
-}
-
-/* ===== HELP-PROCESS ===== */
-@media (max-width: 768px) {
+    
     .help-process {
         padding: 40px 0;
         width: 100%;
     }
     
-    /* Заголовки */
     .help-process__section-title,
     .help-process__section-main {
         text-align: center;
@@ -1840,12 +1733,11 @@ top: -22px;
         margin-bottom: 30px;
     }
     
-    /* Фото help-process-img после заголовков */
     .help-process-wrap > div:last-child {
         order: 1;
         width: 100%;
         margin-bottom: 30px;
-                position: relative;
+        position: relative;
         top: -200px;
     }
 
@@ -1863,7 +1755,6 @@ top: -22px;
         display: none;
     }
     
-    /* Help-process__step-content друг под другом */
     .help-process__steps {
         order: 2;
         display: flex;
@@ -1884,13 +1775,12 @@ top: -22px;
         gap: 15px;
     }
     
-    /* Help-process__section-btn после step-content */
     .help-process__actions {
         order: 3;
         margin-top: 0;
         min-height: 80px;
-                position: relative;
-        top: 385px;
+        position: relative;
+        top: 425px;
     }
     
     .help-process__section-btn {
@@ -1903,30 +1793,39 @@ top: -22px;
         width: 100%;
         max-width: 300px;
     }
+    
     .help-process__step-content img {
         display: none;
     }
-}
-
-/* ===== FOOTER ===== */
-@media (max-width: 768px) {
+    
     .footer {
         padding: 40px 0 30px;
         width: 100%;
         margin-top: 0;
         border-radius: 40px;
-        max-width: 340px;
+        max-width: 380px;
+        margin: 0 auto;
     }
     
-    /* Навигацию убираем */
     .footer__menu-list {
         display: none;
     }
     
-    /* Все пункты друг под другом по левому краю */
     .footer__main {
         flex-direction: column;
         gap: 30px;
+    }
+    
+    .footer__logo img {
+        display: none;
+    }
+    
+    .footer__logo-bottom img {
+        display: block;
+        margin-top: 50px;
+        width: 200px;
+        height: auto;
+        max-height: 65px;
     }
     
     .footer__columns {
@@ -1969,64 +1868,6 @@ top: -22px;
     }
 }
 
-/* ===== ДОПОЛНИТЕЛЬНЫЕ ИСПРАВЛЕНИЯ ШИРИНЫ ===== */
-@media (max-width: 768px) {
-    /* Убираем все возможные причины горизонтального скролла */
-    .header,
-    .hero,
-    .stats,
-    .children,
-    .about,
-    .fund-info,
-    .help-process,
-    .footer,
-    .content {
-        width: 100%;
-        max-width: 100vw;
-        overflow-x: hidden;
-        padding-left: 15px;
-        padding-right: 15px;
-        margin-left: 0;
-        margin-right: 0;
-    }
-    
-    /* Исправляем внутренние элементы */
-    .hero__left,
-    .hero__right,
-    .children-grid,
-    .about__content,
-    .about__block,
-    .fund-info__content,
-    .help-process-wrap,
-    .footer__content {
-        width: 100%;
-        padding-left: 0;
-        padding-right: 0;
-        margin-left: 0;
-        margin-right: 0;
-    }
-    
-    /* Исправляем кнопки и карточки */
-    .button,
-    .child-card,
-    .qa__item,
-    .step,
-    .fund-info__block,
-    .help-process__step {
-        width: 100%;
-        max-width: 100%;
-        box-sizing: border-box;
-    }
-    
-    /* Убираем горизонтальный скролл на body */
-    body {
-        overflow-x: hidden;
-        width: 100%;
-        position: relative;
-    }
-}
-
-/* ===== ОЧЕНЬ МАЛЕНЬКИЕ ЭКРАНЫ ===== */
 @media (max-width: 480px) {
     .page {
         padding: 0 10px;
@@ -2036,9 +1877,6 @@ top: -22px;
         font-size: 24px;
     }
     
-    .hero__subtitle {
-        font-size: 15px;
-    }
     
     .section-subtitle,
     .about__block-title,
@@ -2055,7 +1893,6 @@ top: -22px;
         font-size: 22px;
     }
     
-    /* Ещё более агрессивно убираем горизонтальный скролл */
     * {
         max-width: 100vw;
     }
@@ -2065,3 +1902,4 @@ top: -22px;
         height: auto;
     }
 }
+
