@@ -1664,7 +1664,7 @@ button {
   }
 
   .about {
-    padding: 40px 0;
+    padding: 60px 0;
     width: 100%;
   }
 
@@ -2243,5 +2243,8 @@ button {
   }
   .child-card__tagline {
     margin-bottom: 5px;
+}
+.about__options-title {
+    margin-bottom: 10px;
 }
 }
