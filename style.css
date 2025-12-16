@@ -1853,8 +1853,8 @@ button {
 
   .fund-info__text {
     margin: 20px 0;
-    padding: 15px;
-    font-size: 13px;
+    padding: 14px;
+    font-size: 12px;
   }
 
   .help-process {
@@ -2241,4 +2241,7 @@ button {
   .child-card {
     padding: 0;
   }
+  .child-card__tagline {
+    margin-bottom: 5px;
+}
 }
