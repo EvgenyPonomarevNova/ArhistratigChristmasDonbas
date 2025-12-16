@@ -1862,6 +1862,18 @@ button {
     width: 100%;
   }
 
+  .help-process-block {
+    border-radius: 24px;
+    max-width: 660px;
+    min-height: 80px;
+    background: var(--ice);
+    padding: 20px;
+    margin-top: -6px;
+margin-left: 10px;
+margin-right: 10px;
+    
+}
+
   .help-process__section-title,
   .help-process__section-main {
     text-align: center;
@@ -1921,6 +1933,7 @@ button {
     min-height: 80px;
     position: relative;
     top: 425px;
+    display: none;
   }
 
   .help-process__section-btn {
@@ -2088,7 +2101,7 @@ button {
   }
 
   .help-process__steps {
-    margin-top: -70px;
+    margin-top: -160px;
     padding-left: 10px;
     padding-right: 10px;
   }
@@ -2188,7 +2201,7 @@ button {
   }
 
   .help-process__steps {
-    margin-top: -150px;
+    margin-top: -160px;
     padding-left: 10px;
     padding-right: 10px;
   }
@@ -2199,7 +2212,7 @@ button {
   }
 
   .help-process-wrap > div:last-child {
-    top: -209px;
+    top: -150px;
   }
 
   .footer {
